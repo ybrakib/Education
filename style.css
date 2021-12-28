@@ -12,19 +12,19 @@
 html {
 	height: 100vh;
 	width: 100vw;
-	background: #33353b;
+	background: #1a1a1a;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	width: 360px;
-	background: #222327;
 	overflow: hidden;
 }
 
@@ -103,9 +103,9 @@ nav ul .list.active a .text {
 	top: -50%;
 	width: 65px;
 	height: 65px;
-	background: #f1f1f1;
+	background: #0381f7;
 	border-radius: 50%;
-	border: 8px solid #222327;
+	border: 8px solid #1a1a1a;
 	transition: 0.5s;
 }
 
@@ -123,12 +123,12 @@ nav ul .list.active a .text {
 #indicator::before {
 	left: -24px;
 	border-top-right-radius: 20px;
-	box-shadow: 1px -10px 0 0 #222327;
+	box-shadow: 1px -10px 0 0 #1a1a1a;
 }
 #indicator::after {
 	right: -24px;
 	border-top-left-radius: 20px;
-	box-shadow: -1px -10px 0 0 #222327;
+	box-shadow: -1px -10px 0 0 #1a1a1a;
 }
 
 nav ul .list:nth-child(1).active ~ #indicator {
