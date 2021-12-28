@@ -8,12 +8,6 @@
 	-webkit-user-select: none;
 	user-select: none;
 }
-:root {
-	--clr: #161618;
-	--bg-clr: #222327;
-	--bg: #f1f1f1;
-	--cell-w: 65px;
-}
 
 html {
 	height: 100vh;
@@ -30,7 +24,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	width: 360px;
-	background: var(--bg-clr);
+	background: #222327;
 	overflow: hidden;
 }
 
@@ -45,7 +39,7 @@ nav {
 	position: relative;
 	width: 354px;
 	height: 4.5rem;
-	background: var(--bg);
+	background: #f1f1f1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -58,7 +52,7 @@ nav ul {
 nav ul .list {
 	position: relative;
 	list-style: none;
-	width: var(--cell-w);
+	width: 65px;
 	height: 70px;
 	z-index: 1;
 }
@@ -82,7 +76,7 @@ nav ul .list a .icon {
 	font-size: 2.5em;
 	text-align: center;
 	transition: 0.5s;
-	color: var(--clr);
+	color: #161618;
 }
 
 nav ul .list.active a .icon {
@@ -91,7 +85,7 @@ nav ul .list.active a .icon {
 
 nav ul .list a .text {
 	position: absolute;
-	color: var(--clr);
+	color: #161618;
 	font-weight: bold;
 	font-size: 0.75em;
 	letter-spacing: 0.05em;
@@ -107,11 +101,11 @@ nav ul .list.active a .text {
 #indicator {
 	position: absolute;
 	top: -50%;
-	width: var(--cell-w);
-	height: var(--cell-w);
-	background: var(--bg);
+	width: 65px;
+	height: 65px;
+	background: #f1f1f1;
 	border-radius: 50%;
-	border: 8px solid var(--bg-clr);
+	border: 8px solid #222327;
 	transition: 0.5s;
 }
 
@@ -129,12 +123,12 @@ nav ul .list.active a .text {
 #indicator::before {
 	left: -24px;
 	border-top-right-radius: 20px;
-	box-shadow: 1px -10px 0 0 var(--bg-clr);
+	box-shadow: 1px -10px 0 0 #222327;
 }
 #indicator::after {
 	right: -24px;
 	border-top-left-radius: 20px;
-	box-shadow: -1px -10px 0 0 var(--bg-clr);
+	box-shadow: -1px -10px 0 0 #222327;
 }
 
 nav ul .list:nth-child(1).active ~ #indicator {
