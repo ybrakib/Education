@@ -20,6 +20,22 @@ body {
 	overflow: hidden;
 }
 
+/* #region Settings */
+header,
+main {
+	width: 95vw;
+	height: calc(100vh - 9rem);
+	background-color: var(--bg-clr);
+	border-radius: 1rem;
+	position: absolute;
+	top: 1rem;
+}
+
+header {
+	display: none;
+}
+/* #endregion Settings */
+
 /* #region Footer */
 
 footer {
@@ -45,7 +61,7 @@ nav ul .list {
 	z-index: 1;
 }
 
-nav ul .list a {
+nav ul .list div {
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -55,9 +71,10 @@ nav ul .list a {
 	text-align: center;
 	font-weight: bolder;
 	text-decoration: none;
+	cursor: pointer;
 }
 
-nav ul .list a .icon {
+nav ul .list div .icon {
 	position: relative;
 	display: block;
 	line-height: 5rem;
@@ -67,21 +84,21 @@ nav ul .list a .icon {
 	color: var(--clr);
 }
 
-nav ul .list.active a .icon {
-	transform: translateY(-2.5rem);
+nav ul .list.active div .icon {
+	transform: translateY(-2.6rem);
 }
 
-nav ul .list a .text {
+nav ul .list div .text {
 	position: absolute;
 	color: var(--clr);
 	font-weight: bold;
-	font-size: 1rem;
+	font-size: 1.1rem;
 	letter-spacing: 0.05em;
 	transition: 0.5s;
 	opacity: 0;
 	transform: translateY(1.5rem);
 }
-nav ul .list.active a .text {
+nav ul .list.active div .text {
 	opacity: 1;
 	transform: translateY(0.7rem);
 }
@@ -94,7 +111,6 @@ nav ul .list.active a .text {
 	top: 50%;
 	width: 20px;
 	height: 20px;
-	background: transparent;
 }
 
 .indicator::before {
@@ -122,6 +138,7 @@ nav ul {
 	border-radius: 50%;
 	border: 0.5rem solid var(--clr);
 	transition: 0.5s;
+	cursor: pointer;
 }
 
 nav ul .list:nth-child(1).active ~ .indicator {
@@ -141,6 +158,13 @@ nav ul .list:nth-child(5).active ~ .indicator {
 }
 
 @media (min-width: 576px) {
+	header,
+	main {
+		width: calc(100vw - 10rem);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
 	footer {
 		left: 50%;
 		transform: translateX(-50%);

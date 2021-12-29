@@ -147,3 +147,24 @@ function activeLink() {
 	list.forEach((item) => item.classList.remove("active"));
 	this.classList.add("active");
 }
+
+// #region Maths
+
+// #endregion Maths
+
+function theme() {
+	var r = document.querySelector(":root");
+	var color =
+		"#" +
+		(
+			Math.floor(Math.random() * (16777215 - 1118481 + 1)) + 1118481
+		).toString(16);
+	const colorPart = color.slice(1);
+	const ind = parseInt(colorPart, 16);
+	let iter = ((1 << (4 * colorPart.length)) - 1 - ind).toString(16);
+	while (iter.length < colorPart.length) {
+		iter = "0" + iter;
+	}
+	r.style.setProperty("--clr", color);
+	r.style.setProperty("--bg-clr", "#" + iter);
+}
