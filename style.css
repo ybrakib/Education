@@ -1,4 +1,3 @@
-/* Resets Browser Defaults */
 * {
 	margin: 0;
 	padding: 0;
@@ -9,22 +8,15 @@
 	user-select: none;
 }
 
-html {
-	height: 100vh;
-	width: 100vw;
-	background: #1a1a1a;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+:root {
+	--clr: #222327;
+	--bg-clr: #1ae6f5;
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	width: 360px;
+	background: var(--clr);
+	width: 95vw;
+	margin: 0 auto;
 	overflow: hidden;
 }
 
@@ -32,28 +24,24 @@ body {
 
 footer {
 	position: absolute;
-	bottom: 0.5rem;
+	bottom: 1rem;
 }
 
 nav {
 	position: relative;
-	width: 354px;
+	width: 95vw;
 	height: 4.5rem;
-	background: #f1f1f1;
+	background: var(--bg-clr);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 1rem;
 }
-nav ul {
-	display: flex;
-	width: 330px;
-}
 nav ul .list {
 	position: relative;
 	list-style: none;
-	width: 65px;
-	height: 70px;
+	width: 70px;
+	height: 4.5rem;
 	z-index: 1;
 }
 
@@ -72,46 +60,35 @@ nav ul .list a {
 nav ul .list a .icon {
 	position: relative;
 	display: block;
-	line-height: 75px;
-	font-size: 2.5em;
+	line-height: 5rem;
+	font-size: 2rem;
 	text-align: center;
 	transition: 0.5s;
-	color: #161618;
+	color: var(--clr);
 }
 
 nav ul .list.active a .icon {
-	transform: translateY(-40px);
+	transform: translateY(-2.5rem);
 }
 
 nav ul .list a .text {
 	position: absolute;
-	color: #161618;
+	color: var(--clr);
 	font-weight: bold;
-	font-size: 0.75em;
+	font-size: 1rem;
 	letter-spacing: 0.05em;
 	transition: 0.5s;
 	opacity: 0;
-	transform: translateY(40px);
+	transform: translateY(1.5rem);
 }
 nav ul .list.active a .text {
 	opacity: 1;
-	transform: translateY(10px);
+	transform: translateY(0.7rem);
 }
 
-#indicator {
-	position: absolute;
-	top: -50%;
-	width: 65px;
-	height: 65px;
-	background: #0381f7;
-	border-radius: 50%;
-	border: 8px solid #1a1a1a;
-	transition: 0.5s;
-}
-
-#indicator::before,
-#indicator::after,
-#indicator::marker {
+.indicator::before,
+.indicator::after,
+.indicator::marker {
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -120,31 +97,83 @@ nav ul .list.active a .text {
 	background: transparent;
 }
 
-#indicator::before {
-	left: -24px;
+.indicator::before {
+	left: -22.5px;
 	border-top-right-radius: 20px;
-	box-shadow: 1px -10px 0 0 #1a1a1a;
+	box-shadow: 1px -10px 0 0 var(--clr);
 }
-#indicator::after {
-	right: -24px;
+.indicator::after {
+	right: -22.3px;
 	border-top-left-radius: 20px;
-	box-shadow: -1px -10px 0 0 #1a1a1a;
+	box-shadow: -1px -10px 0 0 var(--clr);
 }
 
-nav ul .list:nth-child(1).active ~ #indicator {
+nav ul {
+	display: flex;
+	width: 325px;
+}
+
+.indicator {
+	position: absolute;
+	top: -50%;
+	width: 65px;
+	height: 65px;
+	background: var(--bg-clr);
+	border-radius: 50%;
+	border: 0.5rem solid var(--clr);
+	transition: 0.5s;
+}
+
+nav ul .list:nth-child(1).active ~ .indicator {
 	transform: translateX(calc(65px * 0));
 }
-nav ul .list:nth-child(2).active ~ #indicator {
+nav ul .list:nth-child(2).active ~ .indicator {
 	transform: translateX(calc(65px * 1));
 }
-nav ul .list:nth-child(3).active ~ #indicator {
+nav ul .list:nth-child(3).active ~ .indicator {
 	transform: translateX(calc(65px * 2));
 }
-nav ul .list:nth-child(4).active ~ #indicator {
+nav ul .list:nth-child(4).active ~ .indicator {
 	transform: translateX(calc(65px * 3));
 }
-nav ul .list:nth-child(5).active ~ #indicator {
+nav ul .list:nth-child(5).active ~ .indicator {
 	transform: translateX(calc(65px * 4));
+}
+
+@media (min-width: 576px) {
+	footer {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	nav {
+		width: 550px;
+	}
+	nav ul {
+		width: 350px;
+	}
+
+	.indicator {
+		width: 70px;
+		height: 70px;
+		border: 0.5rem solid var(--clr);
+	}
+
+	nav ul .list:nth-child(1).active ~ .indicator {
+		transform: translateX(calc(70px * 0));
+	}
+	nav ul .list:nth-child(2).active ~ .indicator {
+		transform: translateX(calc(70px * 1));
+	}
+	nav ul .list:nth-child(3).active ~ .indicator {
+		transform: translateX(calc(70px * 2));
+	}
+	nav ul .list:nth-child(4).active ~ .indicator {
+		transform: translateX(calc(70px * 3));
+	}
+	nav ul .list:nth-child(5).active ~ .indicator {
+		transform: translateX(calc(70px * 4));
+	}
 }
 
 /* #endregion Footer */
